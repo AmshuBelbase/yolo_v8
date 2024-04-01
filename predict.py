@@ -49,10 +49,10 @@ while ret:
                 cv2.putText(frame, results.names[int(class_id)].upper(), (int(x1), int(y1 - 10)),
                             cv2.FONT_HERSHEY_SIMPLEX, 1.3, (0, 255, 0), 3)
 
-    if video_path != cam_source:
-        out.write(frame)
-    else:
-        cv2.imshow("output", frame)
+        if video_path != cam_source:
+            out.write(frame)
+        else:
+            cv2.imshow("output", frame)
 
     ret, frame = cap.read()
     count += 1
