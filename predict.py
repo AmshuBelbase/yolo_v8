@@ -33,10 +33,11 @@ model_path = os.path.join('.', 'runs', 'detect', 'train', 'weights', 'best.pt')
 # Load a model
 model = YOLO(model_path)  # load a custom model
 count = 0
-threshold = 0.75
+skip = 2
+threshold = 0.4
 
 while ret:
-    if (count % 2 == 0):
+    if (count % skip == 0):
         print(time.time())
         results = model(frame)[0]
 
